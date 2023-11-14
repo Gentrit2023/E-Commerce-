@@ -1,59 +1,168 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-* {
-  box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
-  background-color: black;
-}
-.wrapper {
-  width: 100%;
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+
 }
 
-li,
-a,
-button {
-  font-family: "Monserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
+.wrapper{
+    width: 100%;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10%;
+/*Pjesa e nav barit edhe headeri*/
+li,a,button{
+    font-family: "Monserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    
+
 }
 
-.logo {
-  cursor: pointer;
+.logo{
+    cursor: pointer;
+    
 }
-.nav_list {
-  list-style: none;
-}
-
-.nav_list li {
-  display: inline-block;
-  padding: 0px 20px;
+.nav_list{
+    list-style: none;
 }
 
-.nav_list li a {
-  transition: all 0.3s ease 0s;
+.nav_list li{
+    display: inline-block;
+    padding: 0px 20px;
+    
 }
 
-.nav_list li a:hover {
-  color: #0088a9;
+.nav_list li a{
+    transition: all 0.3s ease 0s;
+
 }
 
-button {
-  padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
+.nav_list li a:hover{
+color: #0088a9;
 }
-button:hover {
-  background-color: rgba(0, 0, 0, 0.595);
+
+.btn button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+
 }
+button:hover{
+background-color:rgba(0, 0, 0, 0.595) ;    
+}
+
+
+
+.tit {
+    font-family: "Monserrat",sans-serif;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    text-align: 10px;
+    
+
+}
+
+.flex-container{
+width: 100%;
+height: auto;
+
+}
+hr{
+    opacity: 50%;
+}
+
+
+
+/*Pjesa e Box Per Produkte */
+
+.container {
+  
+    height: 100px;
+    width: 80%;
+    display: flex;
+    
+    
+    font-family: "Monserrat",sans-serif;
+    
+
+    }
+    
+    .container{
+
+            max-width: 100%;
+            margin: auto;
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            color: black;
+            padding-bottom: 50px;
+
+            
+        
+
+    }   
+    .box{
+        
+        background: rgb(221, 221, 221);
+        text-align: center;
+        box-shadow: -1px 0 5px 5px rgb(200, 5, 5);
+        padding: 10px; 
+        
+
+    } 
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .text {
+        padding: 10%;
+    }
+    
+    .text h3 {
+        font-size: 16px;
+        text-align: start;
+    }
+    
+    .text h1 {
+        font-size: 12px;
+        color: rgb(104, 100, 100);
+        padding-top: 20px;
+        text-align: start;
+    }
+    
+   .button1 {
+        background: #27c8a4;
+        padding: 5px;
+      
+        
+        
+    }
+  
+   .button1 button{
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        transition: all 0.3s ease 0s;
+
+    }
+    .button1:hover{
+        background-color:rgba(255, 149, 0, 0.485) ;    
+        }
