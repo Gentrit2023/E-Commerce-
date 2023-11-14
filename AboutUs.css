@@ -119,7 +119,7 @@ body {
   overflow: hidden;
 }
 .about-img img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   display: block;
   transition: 0.5s ease;
