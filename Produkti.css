@@ -3,15 +3,17 @@
 
 *{
     box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 
+}
+.wrapper{
+    width: 100%;
 }
 
 :root {
     --dark-color-lighten: #f2f5ff;
     --red-card: #a62121;
-    --blue-card: #4bb7e6;
     --btn: #141414;
     --btn-hover: #3a3a3a;
     --text: #fbf7f7;
@@ -43,8 +45,9 @@ img {
   display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 60px;
-    padding: 20px;
-    margin: 10px;
+    padding: 40px;
+    margin: 30px;
+    
 }
 
 .card {
@@ -59,9 +62,7 @@ img {
     cursor: pointer;
 }
 
-.card-blue {
-    background: var(--blue-card);
-}
+
 
 .product-image {
     height: 230px;
@@ -136,13 +137,20 @@ img {
 }
 
 @media screen and (max-width: 800px) {
-    body {
-        height: auto;
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    .container {
-        padding: 2rem 0;
+    .card {
         width: 100%;
-        flex-direction: column;
-        gap: 3rem;
-    }}
+    }
+
+    .product-image {
+        transform: translate(0, 0);
+    }
+
+    .card:hover .product-image {
+        transform: translate(0, 0);
+    }
+    
+}

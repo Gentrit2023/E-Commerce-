@@ -1,86 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-*{
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
-
-}
-
-.wrapper{
-    width: 100%;
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 /*Pjesa e nav barit edhe headeri*/
-li,a,button{
-    font-family: "Monserrat",sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: white;
-    text-decoration: none;
+li,
+a,
+button {
+  font-family: "Monserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    
-
-}
-
-.logo{
-    cursor: pointer;
-    
-}
-.nav_list{
-    list-style: none;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
 }
 
-.nav_list li{
-    display: inline-block;
-    padding: 0px 20px;
-    
+.logo {
+  cursor: pointer;
+}
+.nav_list {
+  list-style: none;
 }
 
-.nav_list li a{
-    transition: all 0.3s ease 0s;
-
+.nav_list li {
+  display: inline-block;
+  padding: 0px 20px;
 }
 
-.nav_list li a:hover{
-color: #0088a9;
+.nav_list li a {
+  transition: all 0.3s ease 0s;
 }
 
-.btn button{
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169,1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-
-
-}
-button:hover{
-background-color:rgba(0, 0, 0, 0.595) ;    
+.nav_list li a:hover {
+  color: #0088a9;
 }
 
-
+.btn button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.595);
+}
 
 .tit {
-    font-family: "Monserrat",sans-serif;
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    text-align: 10px;
-    
-
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  text-align: 10px;
 }
 
-.flex-container{
-width: 100%;
-height: auto;
-
+.flex-container {
+  width: 100%;
+  height: auto;
 }
-hr{
-    opacity: 50%;
+hr {
+  opacity: 50%;
 }
