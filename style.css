@@ -68,7 +68,7 @@ button:hover {
 
 .tit {
   font-family: "Monserrat", sans-serif;
-  color: white;
+  color: #DEB992  ;
   padding: 20px;
   text-decoration: none;
   text-align: 10px;
@@ -98,7 +98,18 @@ hr {
   display: none;
 }
 
+
+
 /*End */
+
+.btnCart{
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+
 @media (max-width: 858px){
   .checkbtn{
   display: block;

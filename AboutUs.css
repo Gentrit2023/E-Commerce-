@@ -70,8 +70,14 @@ hr {
 }
 /*Pjesa e stilizimit te file About Us*/
 body {
-  background: #000000;
+  background:   #051622;
 }
+.btnCart{
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
 .heading {
   width: 90%;
   display: flex;
