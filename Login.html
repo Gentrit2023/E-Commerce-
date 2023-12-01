@@ -27,9 +27,21 @@
         <div class="button">
           <input type="submit" class="btn" onclick="validation()" value="Login">
         </div>
+        <div class="group">
+          <span><a href="index.html">Home</a></span>
+          <span><a href="Register.html">Register </a></span>
+        </div>
       </form>
     </div>
-    <script src="Register.js"></script>
+    <div class="popup" id="popup">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <h2>Thank You!</h2>
+      <p>You were Registration Sucessfully. Thanks!</p>
+      <a href="login.html"><button onclick="CloseSlide()">OK</button></a>
+    </div>
+  </div>
+
+  <script src="Register.js"></script>
 </body>
 
 </html>

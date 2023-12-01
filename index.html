@@ -2,69 +2,69 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <title>Online Store</title>
+  <title>Online Store</title>
 
 </head>
 
 <body style="background-color: #1a1110;">
 
-    <header>
+  <header>
 
-        <img class="logo" src="logo1.png" alt="logo" width="100px" padding 10px>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-            </label>
-            <ul class="nav_list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Men.html">Men</a></li>
-                <li><a href="Woman.html">Woman</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-
-
-
-            </ul>
-        </nav>
-        <a class="btn" href="Register.html"><button>Log In</button></a>
-     
-    </header>
-    
-    <hr>
+    <img class="logo" src="logo1.png" alt="logo" width="100px" padding 10px>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="nav_list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Men.html">Men</a></li>
+        <li><a href="Woman.html">Woman</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
 
 
-    <div class="content-Slide">
-        <div class="box">
 
-        <img class="mySlides" src="NikeS1.jpg" style="width:100%">
-        <img class="mySlides" src="NikeS2.jpg" style="width:100%">
-        <img class="mySlides" src="NikeS3.jpg" style="width:100%">
-      </div>
-      <a class="btnS" href="Men.html"> <button> Buy Now</button></a>
+      </ul>
+    </nav>
+    <a class="btn" href="Login.html"><button>Log In</button></a>
+
+  </header>
+
+  <hr>
+
+
+  <div class="content-Slide">
+    <div class="box">
+
+      <img class="mySlides" src="NikeS1.jpg" style="width:100%">
+      <img class="mySlides" src="NikeS2.jpg" style="width:100%">
+      <img class="mySlides" src="NikeS3.jpg" style="width:100%">
     </div>
-      <script>
-        var myIndex = 0;
-        carousel();
-        
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          myIndex++;
-          if (myIndex > x.length) {myIndex = 1}    
-          x[myIndex-1].style.display = "block";  
-          setTimeout(carousel, 9000);    
-        }
-        </script>
+    <a class="btnS" href="Men.html"> <button> Buy Now</button></a>
+  </div>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 9000);
+    }
+  </script>
 
 
 
