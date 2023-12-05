@@ -1,17 +1,24 @@
 function validation() {
+  var usernamePattern = /^[a-zA-Z0-9]{6,}$/;
+  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var passwordPattern = /^[a-zA-Z0-9!@#$%^&*]{6,}$/;
+
   if (document.Formfill.Username.value == "") {
     document.getElementById("result").innerHTML = "Enter Username*";
     return false;
-  } else if (document.Formfill.Username.value.length < 6) {
+  } else if (!usernamePattern.test(document.Formfill.Username.value)) {
     document.getElementById("result").innerHTML = "Atleast six letter*";
     return false;
   } else if (document.Formfill.Email.value == "") {
     document.getElementById("result").innerHTML = "Enter your Email*";
     return false;
+  } else if (!emailPattern.test(document.Formfill.Email.value)) {
+    document.getElementById("result").innerHTML = "Invalid Email*";
+    return false;
   } else if (document.Formfill.Password.value == "") {
     document.getElementById("result").innerHTML = "Enter your Password*";
     return false;
-  } else if (document.Formfill.Password.value.length < 6) {
+  } else if (!passwordPattern.test(document.Formfill.Password.value)) {
     document.getElementById("result").innerHTML = "Password must be 6-digits*";
     return false;
   } else if (document.Formfill.CPassword.value == "") {
@@ -28,8 +35,4 @@ function validation() {
     popup.classList.add("open-slide");
     return false;
   }
-}
-var popup = document.getElementById("popup");
-function CloseSlide() {
-  popup.classList.remove("open-slide");
 }
