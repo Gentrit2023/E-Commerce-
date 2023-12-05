@@ -41,7 +41,14 @@
     </div>
   </div>
 
-  <script src="Register.js"></script>
+  <script src="Register.js">
+    function validation() {
+      let usernamePattern = /^[a-zA-Z0-9]{6,20}$/;
+      let emailPattern = /^[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+      let passwordPattern = /^[a-zA-Z@#$%^&*]{6,20}$/;
+
+    }
+  </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 function validation() {
-  var usernamePattern = /^[a-zA-Z0-9]{6,}$/;
-  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  var passwordPattern = /^[a-zA-Z0-9!@#$%^&*]{6,}$/;
+  let usernamePattern = /^[a-zA-Z0-9]{6,20}$/;
+  let emailPattern = /^[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+  let passwordPattern = /^[a-zA-Z0-9@#$%^&*]{6,20}$/;
 
   if (document.Formfill.Username.value == "") {
     document.getElementById("result").innerHTML = "Enter Username*";
@@ -19,7 +19,7 @@ function validation() {
     document.getElementById("result").innerHTML = "Enter your Password*";
     return false;
   } else if (!passwordPattern.test(document.Formfill.Password.value)) {
-    document.getElementById("result").innerHTML = "Password must be 6-digits*";
+    document.getElementById("result").innerHTML = "Password incorrect*";
     return false;
   } else if (document.Formfill.CPassword.value == "") {
     document.getElementById("result").innerHTML = "Enter Confirm Password*";
