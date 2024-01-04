@@ -4,24 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>Login In</title>
   <link rel="stylesheet" href="Register.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
 
 <body>
   <div class="container">
     <div class="form-box">
       <form action="" name="Formfill" onsubmit="return validation()">
-        <h2>Register</h2>
+        <h2>Login In</h2>
         <p id="result"></p>
-        <div class="input-box">
-          <i class='bx bxs-user'></i>
-          <input type="text" name="Username" placeholder="Username">
-        </div>
+
         <div class="input-box">
           <i class='bx bxs-envelope'></i>
           <input type="email" name="Email" placeholder="Email">
@@ -30,16 +23,13 @@
           <i class='bx bxs-lock-alt'></i>
           <input type="password" name="Password" placeholder="Password">
         </div>
-        <div class="input-box">
-          <i class='bx bxs-lock-alt'></i>
-          <input type="password" name="CPassword" placeholder="Confirm Password">
-        </div>
+
         <div class="button">
-          <input type="submit" class="btn" onclick="validation()" value="Register">
+          <input type="submit" class="btn" onclick="validation()" value="Login">
         </div>
         <div class="group">
-          <span><a href="index.html">Home</a></span>
-          <span><a href="Login.html">Login </a></span>
+          <span><a href="index.php">Home</a></span>
+          <span><a href="Register.php">Register </a></span>
         </div>
       </form>
     </div>
@@ -47,12 +37,18 @@
       <ion-icon name="checkmark-circle-outline"></ion-icon>
       <h2>Thank You!</h2>
       <p>You were Registration Sucessfully. Thanks!</p>
-      <a href="login.html"><button onclick="CloseSlide()">OK</button></a>
+      <a href="login.php"><button onclick="CloseSlide()">OK</button></a>
     </div>
   </div>
-  <script src="Register.js"></script>
+
+  <script src="Register.js">
+    function validation() {
+      let usernamePattern = /^[a-zA-Z0-9]{6,20}$/;
+      let emailPattern = /^[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+      let passwordPattern = /^[a-zA-Z@#$%^&*]{6,20}$/;
+
+    }
+  </script>
 </body>
-
-
 
 </html>

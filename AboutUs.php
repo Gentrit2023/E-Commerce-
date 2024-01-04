@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="AboutUs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <title>Online Store</title>
 
@@ -19,20 +19,19 @@
         <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
-              <i class="fas fa-bars"></i>
+                <i class="fas fa-bars"></i>
             </label>
-            <ul class="nav_list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Men.html">Men</a></li>
-                <li><a href="Woman.html">Woman</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="Contact.html">Contact</a></li>
 
 
-
-            </ul>
+        <ul class="nav_list">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="Men.php">Men</a></li>
+            <li><a href="Woman.php">Woman</a></li>
+            <li><a href="AboutUs.php">About Us</a></li>
+            <li><a href="Contact.php">Contact</a></li>
+        </ul>
         </nav>
-        <a class="btn" href="Login.html"><button>Log In</button></a>
+        <a class="btn" href="Login.php"><button>Log In</button></a>
         <div class="btnCart">
             <i class="fa fa-shopping-cart"></i>
         </div>
