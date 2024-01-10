@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+  }
+
+
+  .container-navadmin{
+display: flex;
+padding: 10px;
+background-color: black ;
+justify-content: space-between;
+  }
+
+
+.logo{
+    width: 7%;
+    height: 7%;
+}
+
+.nav-item{
+padding: 20px;
+
+
+}
+.nav-link{
+    color: white;
+    text-decoration: none;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
+
+
+}
+
+
+.ad-nav{
+text-align: center;
+text-decoration: none;
+font-family: "Monserrat", sans-serif;
+font-weight: 500;
+font-style: bold;
+padding: 20px;
+
+}
+button {
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+
+
+  }
+
+
+  .button-ad button{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 25px;
+    border-radius: 50px;
+
+
+
+
+}
+
+.butonat{
+display: flex;
+padding: 20px;
+justify-content: space-evenly;
+
+
+}
