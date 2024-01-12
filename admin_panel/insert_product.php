@@ -1,34 +1,23 @@
 <?php
 include('../includes/connect.php');
+include('product_class.php');
 
-if(isset($_POST['insert_product'])){
-    $emri = $_POST['emri'];
-    $pershkrimi = $_POST['pershkrimi'];
-    $product_categories = $_POST['product_categories'];
-    $cmimi = $_POST['cmimi'];
-    $sasia = $_POST['sasia'];
+if (isset($_POST['insert_product'])) {
+    $produkti = new Produkti($connect);
 
-    $product_image = $_FILES['product_image']['name'];
-    $temp_image = $_FILES['product_image']['tmp_name'];
+    $produkti->setProperties(
+        $_POST['emri'],
+        $_POST['pershkrimi'],
+        $_POST['product_categories'],
+        $_POST['cmimi'],
+        $_POST['sasia'],
+        $_FILES['product_image']['name'],
+        $_FILES['product_image']['tmp_name']
+    );
 
-    if($emri=='' or $pershkrimi=='' or $product_categories=='' or $product_image=='' or $cmimi=='' or $sasia==''){
-        echo "<script>alert('Ju lutem plotesoni te gjitha fushat')</script>";
-        exit();
-    } else {
-        move_uploaded_file($temp_image,"./product_images/$product_image");
-    }
-
-    $insert_products = "INSERT INTO products (Emri, pershkrimi, product_categories, product_image, cmimi, data, sasia)
-    VALUES ('$emri', '$pershkrimi', '$product_categories', '$product_image', '$cmimi', NOW(), '$sasia')";
-
-    $result_query=mysqli_query($connect,$insert_products);
-
-    if($result_query){
-        $last_inserted_id = mysqli_insert_id($connect);
-        echo  "<script>alert('Produkti me ID $last_inserted_id u insertua me sukses')</script>";
-    } else {
-        echo  "<script>alert('Ka ndodhur nje gabim gjat insertimit se produktit')</script>";
-    }
+    $produkti->validateFields();
+    $produkti->uploadImage();
+    $produkti->insertProduct();
 }
 ?>
 

@@ -46,7 +46,7 @@
 <button><a href="insert_product.php">Inserto Produktet</a></button>
 <button><a href="">Shiko Listen</a></button>
 <button><a href="">Edito Produktet</a></button>
-<button><a href="">Kategoria</a></button>
+<button><a href="">Kontakt Forma</a></button>
 <button><a href="">Porosit</a></button>
 <button><a href="">Pagesat</a></button>
 
