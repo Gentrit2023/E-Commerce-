@@ -1,4 +1,4 @@
-php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,6 +49,9 @@ php<!DOCTYPE html>
     </div>
     <a class="btnS" href="Men.php"> <button> Buy Now</button></a>
   </div>
+
+
+
   <script>
     var myIndex = 0;
     carousel();
@@ -67,6 +70,56 @@ php<!DOCTYPE html>
   </script>
 
 
+
+
+<footer>
+<div class="footer-content">
+            <p>&copy; 2024 Amela Abdullahu - Gentrit Gashi . All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="Footer/Privacy-Policy.php">Privacy Policy</a></li>
+                <li><a href="Footer/terms.php">Terms of Service</a></li>
+                <li><a href="Contact.php">Contact Us</a></li>
+            </ul>
+        </div>
+
+
+</footer>
+
+
+<style>
+footer {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  
+  width: 100%;
+  background-color: #051622;
+  
+}
+
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.footer-links {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+
+.footer-links li {
+margin: 0 10px;
+}
+
+.footer-links a {
+color: white;
+text-decoration: none;
+}
+</style>
 
 </body>
 

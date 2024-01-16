@@ -1,3 +1,23 @@
+<?php
+include('admin_panel/Product.php');
+
+
+include('includes/connect.php');
+
+$select_query = "SELECT * FROM `products` ORDER BY emri";
+$result_query = mysqli_query($connect, $select_query);
+
+$desiredCategoryId = 1;
+
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +26,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Produkti.css">
+    
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
     <title>Online Store</title>
 
 </head>
@@ -45,229 +68,66 @@
             <h1 class="tit">MEN</h1>
            
   
-    <main class="container">
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-        
-        <section class="card">
-            <div class="product-image">
-                <img src="JORDAN3.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X Air Jordan</h2>
-                <p> Air Jordan Blue-White</p>
-                <div class="price">$320</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-
-
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-                        </div>
-
-
-            
-
-            
-        </section>
-
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-
-
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
-
-
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>        
-        
-        <section class="card">
-            <div class="product-image">
-                <img src="nike1.png" alt="OFF-white Red Edition" draggable="false" />
-            </div>
-            <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-            </div>
-            <div class="btn1">
-                <button class="buy-btn">Buy Now</button>
-                
-                <button class="fav">
-                    <i class="fa fa-shopping-cart"> </i>
-
-                </button>
-            </div>
-
-
-            
-
-            
-        </section>
+            <main class="container">
+        <?php
+        while ($row = mysqli_fetch_assoc($result_query)) {
+            $product = new Product($row);
+            $product->generateProductCard($desiredCategoryId);
+        }
+        ?>
     </main>
+
+
+
           <section class="s1"> </section>
 
        
+          <hr>
 
-        
+          <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Amela Abdullahu - Gentrit Gashi . All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="Footer/Privacy-Policy.php">Privacy Policy</a></li>
+                <li><a href="Footer/terms.php">Terms of Service</a></li>
+                <li><a href="Contact.php">Contact Us</a></li>
+            </ul>
+        </div>
+    
+    
+    
+    
+    
+    </footer>
+        <style>
+        footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-        
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+        </style>
         
     
 
