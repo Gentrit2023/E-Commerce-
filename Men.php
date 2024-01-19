@@ -99,36 +99,52 @@ $desiredCategoryId = 1;
     
     
     </footer>
-        <style>
-        footer {
+     
+    <style>
+  
+
+  footer {
     color: white;
     padding: 20px;
     text-align: center;
-}
+    background-color: #051622;
+  }
 
-.footer-content {
+  .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-}
+    font-family: "Arial", sans-serif;
+  }
 
-.footer-links {
+  .footer-links {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     margin-top: 10px;
-}
+  }
 
-.footer-links li {
+  .footer-links li {
     margin: 0 10px;
-}
+  }
 
-.footer-links a {
+  .footer-links a {
     color: white;
     text-decoration: none;
-}
-        </style>
-        
+  }
+
+  @media only screen and (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-links li {
+      margin: 10px 0;
+    }
+  }
+</style>
+
     
 
 

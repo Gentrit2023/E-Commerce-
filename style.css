@@ -154,70 +154,95 @@ transition: all 0.3s ease 0s;
 
 }
 
+/*End*/
 
-
+ 
 /*Pjesa e Slide Showit*/
-.content-Slide{
-display: flex;
-justify-content: center;
-  
-
+.content-Slide {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
-.box{
+
+.box {
   padding: 30px;
-  width: 80%;
-  max-width: 1200px;
-  height: 90%;
-  margin: 20px auto;
-  
+  width: 90%;
+  height: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+
 }
-.mySlides{
+
+.mySlides {
   border-radius: 30px;
-     max-width: 100%;
-     height: auto;
-     user-select: none;
-    user-select: none;
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+  object-fit: cover;
 }
 
 
-.btnS button{
-  display: block;
+.btnS button {
+  display: inline-block;
   position: absolute;
-  top: 80%;
-  left: 10%;
-  background-color:#a62121;
+  top: 68%;
+  left: 12%;
+  background-color: #a62121;
   color: rgb(237, 221, 221);
   font-size: 18px;
   padding: 16px 30px;
   cursor: pointer;
+  border: none;
   border-radius: 20px;
   text-align: center;
   text-decoration: none;
-  border-color: white;
   font-weight: bold;
-
-  transition: all 0.3s ease 0s;
-}
-button:hover {
-  background-color: rgba(0, 0, 0, 0.595);
+  transform: translate(0, -50%);
+  transition: background-color 0.3s ease;
 }
 
+.btnS button:hover {
+  background-color: #801b1b; 
+}
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   .box {
-    padding: 20px;
+    padding: 10px;
+    max-height: 300px;
+    overflow: hidden;
+    margin: auto;
   }
 
   .mySlides {
-    border-radius: 20px;
+    border-radius: 10px;
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   .btnS button {
-    top: 37%;
-    left: 10%;
-    font-size: 5px;
-    padding: 8px 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .box {
+    max-height: 200px;
+  }
+
+  .mySlides {
+    height: 150px;
+  }
+
+  .btnS button {
+    font-size: 12px;
+    padding: 8px 16px;
+    top: 60%; 
+    left: 25%;
   }
 }

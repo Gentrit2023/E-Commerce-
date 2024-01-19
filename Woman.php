@@ -91,33 +91,48 @@ $desiredCategoryId = 2;
 
 
 <style>
-footer {
-color: white;
-padding: 20px;
-text-align: center;
-}
+ 
 
-.footer-content {
-max-width: 1200px;
-margin: 0 auto;
-}
+  footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background-color: #051622;
+  }
 
-.footer-links {
-list-style: none;
-padding: 0;
-display: flex;
-justify-content: center;
-margin-top: 10px;
-}
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Arial", sans-serif;
+  }
 
-.footer-links li {
-margin: 0 10px;
-}
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-.footer-links a {
-color: white;
-text-decoration: none;
-}
+  .footer-links li {
+    margin: 0 10px;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-links li {
+      margin: 10px 0;
+    }
+  }
 </style>
 
 
