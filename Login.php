@@ -1,3 +1,14 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+include('includes/connect.php');
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +17,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login In</title>
   <link rel="stylesheet" href="Register.css">
+ 
 </head>
 
 <body>
+
   <div class="container">
     <div class="form-box">
-      <form action="" name="Formfill" onsubmit="return validation()">
+    <form action="class_registration.php" method="post" name="Formfill" onsubmit="return validation()">
         <h2>Login In</h2>
         <p id="result"></p>
 
@@ -25,7 +38,7 @@
         </div>
 
         <div class="button">
-          <input type="submit" class="btn" onclick="validation()" value="Login">
+          <input type="submit" name="login_btn" class="btn" onclick="validation()" value="Login">
         </div>
         <div class="group">
           <span><a href="index.php">Home</a></span>
@@ -37,7 +50,7 @@
       <ion-icon name="checkmark-circle-outline"></ion-icon>
       <h2>Thank You!</h2>
       <p>You were Registration Sucessfully. Thanks!</p>
-      <a href="login.php"><button onclick="CloseSlide()">OK</button></a>
+      <a name="login_btn" href="Login.php"><button onclick="CloseSlide()">OK</button></a>
     </div>
   </div>
 

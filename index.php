@@ -1,3 +1,11 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+include('includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +16,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <title>Online Store</title>
-
+  <?php
+    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+        echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+        $_SESSION['message'] = '';
+    }
+    ?>
 </head>
 
 <body style="background-color: #051622;">
@@ -31,7 +44,25 @@
         <li><a href="Contact.php">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn" href="Login.php"><button>Log In</button></a>
+    <?php 
+            if(isset($_SESSION['auth'])) 
+            {   
+        ?>
+       
+         <ul>
+         <a class="btn" href="logout.php"><button>Log Out</button></a>
+         </ul>
+        
+        <?php 
+            }
+            else {
+                ?>
+                <a class="btn" href="Login.php"><button>Log In</button></a>
+            
+             <?php 
+            }
+            ?>
+    
     <div class="btnCart">
       <i class="fa fa-shopping-cart"></i>
   </div>

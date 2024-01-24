@@ -22,6 +22,11 @@ include('../includes/connect.php');
 <body>
 <h1 style="text-align: center;">Manipulo Produktin</h1>
 <hr>
+<form class="search-form" method="get">
+    <label for="search">Kërko:</label>
+    <input type="text" id="search" name="search" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+    <input type="submit" value="Kërko">
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -38,6 +43,15 @@ include('../includes/connect.php');
    <?php
     $sql="SELECT * FROM products ";
     $result=mysqli_query($connect,$sql);
+
+
+    $search_query = isset($_GET['search']) ? mysqli_real_escape_string($connect, $_GET['search']) : '';
+
+  
+    $sql = "SELECT * FROM products WHERE emri LIKE '%$search_query%' OR pershkrimi LIKE '%$search_query%'";
+    $result = mysqli_query($connect, $sql);
+
+
     if($result){
         while($row=mysqli_fetch_assoc($result)){
             $product_id = $row['product_id'];
@@ -46,7 +60,8 @@ include('../includes/connect.php');
             $cmimi = $row['cmimi'];
             $sasia = $row['sasia'];
 
-        
+
+
             $product_categories_id = $row['product_categories'];
     
             $product_categories = $row['product_categories'];
@@ -104,7 +119,25 @@ include('../includes/connect.php');
             background-color: #f8f9fa;
             padding: 20px;
         }
+        .search-form {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            padding: 5px;
+        }
 
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
         .table {
             width: 100%;
             background-color: #eee;

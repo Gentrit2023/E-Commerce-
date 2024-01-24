@@ -1,3 +1,15 @@
+<?php
+include('includes/connect.php');
+include('KontaktForma/kontakt_class.php');
+session_start();
+
+if (isset($_POST['insert_contact'])) {
+    $kontakti = new Kontakti($connect);
+    $kontakti->procesesoFormen();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +44,24 @@
                 <li><a href="Contact.php">Contact</a></li>
             </ul>
         </nav>
-        <a class="btn" href="Login.php"><button>Log In</button></a>
+        <?php 
+            if(isset($_SESSION['auth'])) 
+            {   
+        ?>
+       
+         <ul>
+         <a class="btn" href="logout.php"><button>Log Out</button></a>
+         </ul>
+        
+        <?php 
+            }
+            else {
+                ?>
+                <a class="btn" href="Login.php"><button>Log In</button></a>
+            
+             <?php 
+            }
+            ?>
         <div class="btnCart">
             <i class="fa fa-shopping-cart"></i>
         </div>
@@ -71,22 +100,22 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
-                    <h2>Send message</h2>
+            <form method="post" action="">
+                                    <h2>Send message</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required=" required">
+                        <input type="text" name="emri" required=" required">
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required=" required">
+                        <input type="text" name="email" required=" required">
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea name="messages" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" value="Send">
+                        <input type="submit" name="insert_contact" value="Send">
                     </div>
                 </form>
             </div>

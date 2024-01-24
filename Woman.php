@@ -1,5 +1,6 @@
 <?php
 include('admin_panel/Product.php');
+session_start();
 
 
 include('includes/connect.php');
@@ -51,7 +52,24 @@ $desiredCategoryId = 2;
                 <li><a href="Contact.php">Contact</a></li>
             </ul>
         </nav>
-        <a class="btn" href="Login.php"><button>Log In</button></a>
+        <?php 
+            if(isset($_SESSION['auth'])) 
+            {   
+        ?>
+       
+         <ul>
+         <a class="btn" href="logout.php"><button>Log Out</button></a>
+         </ul>
+        
+        <?php 
+            }
+            else {
+                ?>
+                <a class="btn" href="Login.php"><button>Log In</button></a>
+            
+             <?php 
+            }
+            ?>
         <div class="btnCart">
             <i class="fa fa-shopping-cart"></i>
         </div>
