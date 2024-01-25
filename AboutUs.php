@@ -56,9 +56,7 @@ include('includes/connect.php');
              <?php 
             }
             ?>
-        <div class="btnCart">
-            <i class="fa fa-shopping-cart"></i>
-        </div>
+        
     </header>
     <hr>
 

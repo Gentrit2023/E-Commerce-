@@ -62,9 +62,7 @@ if (isset($_POST['insert_contact'])) {
              <?php 
             }
             ?>
-        <div class="btnCart">
-            <i class="fa fa-shopping-cart"></i>
-        </div>
+        
     </header>
     <hr>
 

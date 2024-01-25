@@ -76,9 +76,9 @@ $desiredCategoryId = 1;
              <?php 
             }
             ?>
-        <div class="btnCart">
-            <i class="fa fa-shopping-cart"></i>
-        </div>
+            <div class="btnCart">
+               <a class="fa fa-shopping-cart" href="mycart.php">My Cart (0)</a>
+            </div>
     </header>
     <hr>
 

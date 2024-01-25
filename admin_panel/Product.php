@@ -57,9 +57,9 @@ class Product {
     public function generateProductCard($categoryId = null) {
         if ($categoryId === null || $this->iPerketKategoris($categoryId)) {
             echo '<section class="card">';
+            echo '<form action="shtoNeShporte.php" method="POST">';
             echo '<div class="product-image">';
             echo '<img src="admin_panel/product_images/' . $this->getProduct_image() . '" alt="' . $this->getEmri() . '" draggable="false" />';
-
             echo '</div>';
             echo '<div class="product-info">';
             echo '<h2>' . $this->getEmri() . '</h2>';
@@ -67,12 +67,14 @@ class Product {
             echo '<div class="price">$' . $this->getCmimi() . '</div>';
             echo '</div>';
             echo '<div class="btn1">';
-            echo '<button class="buy-btn">Buy Now</button>';
-            echo '<button class="fav"><i class="fa fa-shopping-cart"></i></button>';
+            echo '<button type="submit" name="add_to_cart" class="buy-btn" value="Add to Cart">Add to cart</button>';
             echo '</div>';
+            echo '</form>';
             echo '</section>';
         }
     }
+    
+    
 }
 
 ?>
