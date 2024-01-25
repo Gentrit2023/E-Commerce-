@@ -67,7 +67,9 @@ class Product {
             echo '<div class="price">$' . $this->getCmimi() . '</div>';
             echo '</div>';
             echo '<div class="btn1">';
-            echo '<button type="submit" name="add_to_cart" class="buy-btn" value="Add to Cart">Add to cart</button>';
+            echo '<button type="submit" name="add_to_cart" class="buy-btn" value="' . $this->getProductId() .
+             '" data-product-id="' . $this->getProductId() . '">Add to cart</button>';
+            
             echo '</div>';
             echo '</form>';
             echo '</section>';

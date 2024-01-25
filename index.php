@@ -64,7 +64,7 @@ include('includes/connect.php');
             ?>
     
     <div class="btnCart">
-       <a class="fa fa-shopping-cart" href="mycart.php">My Cart (0)</a>
+       <a class="fa fa-shopping-cart" href="shtoNeShporte.php ">My Cart (0)</a>
     </div>
   </header>
 
