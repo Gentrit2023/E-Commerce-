@@ -65,8 +65,8 @@ $UserRegistration->restrictAccess();
 <button><a href="insert_product.php">Inserto Produktet</a></button>
 <button><a href="../CRUD/crud_produktet.php">CRUD Produktet</a></button>
 <button><a href="../KontaktForma/kontakt_forma.php">Kontakt Forma</a></button>
-<button><a href="">Porosit</a></button>
-<button><a href="">Pagesat</a></button>
+
+<button><a href="pagesat_admin.php">Porosit</a></button>
 <button><a href="../CrudUseri/crudUseri.php">Userat</a></button>
 <a class="btn" href="../logout.php" ><button style="  background-color:red;">Log Out</button></a>
 

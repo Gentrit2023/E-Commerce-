@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 include('../includes/connect.php');
 ?>
 
@@ -65,29 +62,6 @@ include('../includes/connect.php');
             }
         }
         ?>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     <style>
         body {
