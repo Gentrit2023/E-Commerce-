@@ -27,7 +27,7 @@ include('includes/connect.php');
 </head>
 
 
-<body>
+<body style="background:url(back.jpg) no-repeat;">
 
   <div class="container">
     <div class="form-box">

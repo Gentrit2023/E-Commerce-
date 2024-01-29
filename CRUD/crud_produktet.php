@@ -40,6 +40,37 @@ include('../includes/connect.php');
         </tr>
     </thead>
     <tbody>
+    <script>
+ document.addEventListener('DOMContentLoaded', function() {
+    // Zgjedhja e fushes së kerkimit
+    var searchInput = document.getElementById('search');
+
+    // Shtypja e tastit "Delete" ose "Backspace" ne tastier
+    searchInput.addEventListener('keyup', function(event) {
+        // Kontrollo nese osht shtyp tasti "Delete"  ose "Backspace"
+        if (event.key === 'Delete' || event.key === 'Backspace') {
+            // Pastro fushën e kërkimit
+            searchInput.value = '';
+
+            // Heqja e parametrit search nga URL-ja kur fusha osht bosh
+            if (searchInput.value === '') {
+                removeSearchParam();
+
+                window.location.href = 'crud_produktet.php';
+            }
+        }
+    });
+
+    // Heqja e parametrit 'search' nga URL-ja kur pordoruesi fshin kerkimin
+    function removeSearchParam() {
+        var url = window.location.href;
+        var urlWithoutSearchParam = url.split('?')[0]; // Marrja e pjeses se URL-s pa parametrat
+        window.history.pushState({}, document.title, urlWithoutSearchParam);
+    }
+});
+
+</script>
+
    <?php
     $sql="SELECT * FROM products ";
     $result=mysqli_query($connect,$sql);
@@ -48,7 +79,8 @@ include('../includes/connect.php');
     $search_query = isset($_GET['search']) ? mysqli_real_escape_string($connect, $_GET['search']) : '';
 
   
-    $sql = "SELECT * FROM products WHERE emri LIKE '%$search_query%' OR pershkrimi LIKE '%$search_query%'";
+    $sql = "SELECT * FROM products WHERE emri LIKE '%$search_query%' OR pershkrimi LIKE '%$search_query%'
+     OR cmimi LIKE '%$search_query%'";
     $result = mysqli_query($connect, $sql);
 
 

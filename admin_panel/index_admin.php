@@ -29,16 +29,22 @@ $UserRegistration->restrictAccess();
 <div class="container-navadmin">
 
 <div class="logo">
-<img src="..//assets/logo1.png" alt="logo1" width="100%" padding 10px>
+<img src="../logo3.png" alt="logo1" width="100%" padding 10px>
 
 
 </div>    
 <nav class="nav-item">
     <ul class="nav-bar">
 <li>
-<a href="" class="nav-link">Welcome Guest</a>
+<?php
+    
+ 
+    if(isset($_SESSION['auth_user']) && isset($_SESSION['auth_user']['emri'])) {
+        echo '<a href="" class="nav-link">Welcome ' . $_SESSION['auth_user']['emri'] . '</a>';
+    } 
 
 
+?>
 </li>
 
 
@@ -68,6 +74,8 @@ $UserRegistration->restrictAccess();
 
 <button><a href="pagesat_admin.php">Porosit</a></button>
 <button><a href="../CrudUseri/crudUseri.php">Userat</a></button>
+<button><a href="../Logs/logs.php">Logs</a></button>
+
 <a class="btn" href="../logout.php" ><button style="  background-color:red;">Log Out</button></a>
 
             

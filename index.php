@@ -2,8 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-
+include('admin_panel/Product.php');
 include('includes/connect.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +16,7 @@ include('includes/connect.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="Produkti.css">
 
   <title>Online Store</title>
   <?php
@@ -28,8 +31,8 @@ include('includes/connect.php');
 
   <header>
 
-    <img class="logo" src="logo1.png" alt="logo" width="100px" padding 10px>
-    <!--Pjesa e butonit per me ba responsive qe esht perdor check butoni-->
+    <img class="logo" src="logo3.png" alt="logo" width="100px" >
+
     <nav>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -69,19 +72,70 @@ include('includes/connect.php');
   </header>
 
   <hr>
+  
 
 
+
+  <section class="s1">
+    <div class="contenti">
+      
+        <a href="">Explore</a>
+    </div>
+    <div class="video-container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="videoWatch.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+<hr>
+
+
+
+
+
+
+
+
+<section class="s2">
   <div class="content-Slide">
     <div class="box">
 
-      <img class="mySlides" src="NikeS1.jpg" style="width:100%">
-      <img class="mySlides" src="NikeS2.jpg" style="width:100%">
-      <img class="mySlides" src="NikeS3.jpg" style="width:100%">
+      <img class="mySlides" src="Slider/1.jpeg" style="width:100%">
+      <img class="mySlides" src="Slider/3.jpeg" style="width:100%">
+      <img class="mySlides" src="Slider/4.jpeg" style="width:100%">
+      <img class="mySlides" src="Slider/5.jpeg" style="width:100%">
+      <img class="mySlides" src="Slider/6.jpeg" style="width:100%">
+
     </div>
-    <a class="btnS" href="Men.php"> <button> Buy Now</button></a>
   </div>
+ 
+  </section>
+<section >
+  <hr style="opacity: 0.30;">
+<div style="text-align:center; margin-top: 10px;">
+    <span style=" padding: 0px 10px; color: white; font-size: 18px;font-family: Arial, sans-serif; ">REKOMANDIME PER JU !</span>
+</div>
+<hr style="opacity: 0.30;">
+</section>
+  <main class="container">
+    <?php
+    
+    $sql = "SELECT * FROM products ORDER BY RAND() LIMIT 6";
+    $result_query = mysqli_query($connect, $sql);
 
+    if (mysqli_num_rows($result_query) > 0) {
 
+        while ($row = mysqli_fetch_assoc($result_query)) {
+            $product = new Product($row);
+            $product->generateProductCard();
+        }
+    } else {
+        echo "Nuk u gjetën produkte në bazën e të dhënave.";
+    }
+
+    mysqli_close($connect);
+    ?>
+</main>
 
   <script>
     var myIndex = 0;

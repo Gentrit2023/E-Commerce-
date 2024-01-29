@@ -41,7 +41,7 @@ $desiredCategoryId = 1;
     <header>
 
 
-        <img class="logo" src="logo1.png" alt="logo" width="100px" padding 10px>
+    <img class="logo" src="logo3.png" alt="logo" width="100px" >
         <nav>
        <input type="checkbox" id="check">
       <label for="check" class="checkbtn">

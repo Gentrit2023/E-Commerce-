@@ -35,7 +35,49 @@ $result_pagesat = mysqli_query($connect, $sql_pagesat);
             </tr>
         </thead>
         <tbody>
+
+        <script>
+ document.addEventListener('DOMContentLoaded', function() {
+    // Zgjedhja e fushes së kerkimit
+    var searchInput = document.getElementById('search');
+
+    // Shtypja e tastit "Delete" ose "Backspace" ne tastier
+    searchInput.addEventListener('keyup', function(event) {
+        // Kontrollo nese osht shtyp tasti "Delete"  ose "Backspace"
+        if (event.key === 'Delete' || event.key === 'Backspace') {
+            // Pastro fushën e kërkimit
+            searchInput.value = '';
+
+            // Heqja e parametrit search nga URL-ja kur fusha osht bosh
+            if (searchInput.value === '') {
+                removeSearchParam();
+
+                window.location.href = 'logs.php';
+            }
+        }
+    });
+
+    // Heqja e parametrit 'search' nga URL-ja kur pordoruesi fshin kerkimin
+    function removeSearchParam() {
+        var url = window.location.href;
+        var urlWithoutSearchParam = url.split('?')[0]; // Marrja e pjeses se URL-s pa parametrat
+        window.history.pushState({}, document.title, urlWithoutSearchParam);
+    }
+});
+
+</script>
+
+
             <?php
+      $search_query = isset($_GET['search']) ? mysqli_real_escape_string($connect, $_GET['search']) : '';
+
+      
+      $sql = "SELECT * FROM pagesa WHERE emri LIKE '%$search_query%' OR email LIKE '%$search_query%'
+       OR mbiemri LIKE '%$search_query%'  OR qyteti LIKE '%$search_query%' OR adresa LIKE '%$search_query%' 
+       OR numri_telefonit LIKE '%$search_query%' ";
+     
+      $result = mysqli_query($connect, $sql);
+
             if ($result_pagesat) {
                 while ($row_pagesa = mysqli_fetch_assoc($result_pagesat)) {
                     echo "<tr>";

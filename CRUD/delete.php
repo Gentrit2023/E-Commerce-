@@ -1,22 +1,36 @@
 <?php
 
 include('../includes/connect.php');
-if (isset($_GET['deleteid'])) {
+session_start();
 
-    $product_id = $_GET['deleteid'];
+class ProduktiAction {
+    private $connect;
 
-    $sql = "DELETE FROM products WHERE product_id = $product_id"; 
+    public function __construct($connect) {
+        $this->connect = $connect;
+    }
 
-    $result = mysqli_query($connect, $sql);
+    public function deleteProduct($product_id) {
+        $sql = "DELETE FROM products WHERE product_id = $product_id"; 
 
-    if ($result) {
-        
-        header('location:crud_produktet.php');
-    } 
-   
-    
-    else {
-        die(mysqli_error($connect));
+        $result = mysqli_query($this->connect, $sql);
+
+        if ($result) {
+            $Email = $_SESSION['auth_user']['email'];
+            $veprim = "Fshirja e produktit $product_id";
+            $log_query = "INSERT INTO logs (email, veprimi, data_koha) VALUES ('$Email', '$veprim', NOW())";
+            mysqli_query($this->connect, $log_query);
+            header('location:crud_produktet.php');
+        } else {
+            die(mysqli_error($this->connect));
+        }
     }
 }
+
+if (isset($_GET['deleteid'])) {
+    $product_id = $_GET['deleteid'];
+    $produktiAction = new ProduktiAction($connect);
+    $produktiAction->deleteProduct($product_id);
+}
+
 ?>

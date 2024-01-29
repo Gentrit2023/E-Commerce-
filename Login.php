@@ -19,8 +19,13 @@ include('includes/connect.php');
   <link rel="stylesheet" href="Register.css">
  
 </head>
-
-<body>
+<?php
+    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+        echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+        $_SESSION['message'] = '';
+    }
+    ?>
+<body style="background:url(back.jpg) no-repeat;">
 
   <div class="container">
     <div class="form-box">

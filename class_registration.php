@@ -56,14 +56,14 @@ class UserRegistration
         }
    
         if (!isset($_SESSION['auth'])) {
-            header('Location: Login.php');
+            header('Location:../Login.php');
             exit;
         }
    
         $role_as = isset($_SESSION['role_as']) ? $_SESSION['role_as'] : 0;
    
         if ($role_as != 1) {
-            header('Location: index.php');
+            header('Location:../index.php');
             exit;
         }
     }
