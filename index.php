@@ -79,7 +79,7 @@ include('includes/connect.php');
   <section class="s1">
     <div class="contenti">
       
-        <a href="">Explore</a>
+        <a href="Men.php">Explore</a>
     </div>
     <div class="video-container">
         <video autoplay loop muted plays-inline class="back-video">
