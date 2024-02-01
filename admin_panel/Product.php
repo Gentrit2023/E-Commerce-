@@ -64,7 +64,7 @@ class Product {
             echo '<div class="product-info">';
             echo '<h2>' . $this->getEmri() . '</h2>';
             echo '<p>' . $this->getPershkrimi() . '</p>';
-            echo '<div class="price">$' . $this->getCmimi() . '</div>';
+            echo '<div class="price">$' . number_format($this->getCmimi(), 2, '.', ',') . '</div>';
             echo '</div>';
             echo '<div class="btn1">';
             echo '<button type="submit" name="add_to_cart" class="buy-btn" value="' . $this->getProductId() .

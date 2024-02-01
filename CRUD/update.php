@@ -130,7 +130,7 @@ if (isset($_POST['update_product'])) {
             <tr>
                 <td>Cmimi:</td>
                 <td><input type="text" name="cmimi" value="<?php echo $cmimi; ?>" placeholder="Vendos Cmimin" required autocomplete="off"
-                pattern="[0-9]+"></td>
+                pattern="[0-9]+(\.[0-9]+)?"></td>
             </tr>
             <tr>
                 <td>Sasia:</td>

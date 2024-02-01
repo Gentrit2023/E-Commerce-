@@ -115,12 +115,11 @@ if (isset($_POST['insert_product'])) {
 
             <tr>
                 <td>Cmimi:</td>
-                <td><input type="text" name="cmimi" placeholder="Vendos Cmimin" required autocomplete="off" pattern="[0-9]+(\,[0-9]+)?"
-></td>
+                <td><input type="text" name="cmimi" placeholder="Vendos Cmimin" required autocomplete="off" pattern="[0-9]+(\.[0-9]+)?" ;></td>
             </tr>
             <tr>
                 <td>Sasia:</td>
-                <td><input type="text" name="sasia" placeholder="Vendos Sasin" required autocomplete="off" pattern="[0-9]+"></td>
+                <td><input type="text" name="sasia" placeholder="Vendos Sasin" required autocomplete="off" ></td>
             </tr>
 
             <tr class="btn-insert">

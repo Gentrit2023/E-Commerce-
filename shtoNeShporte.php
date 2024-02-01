@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Shto produktin ne sesion
         $product_id = $_POST["add_to_cart"];
         
-        // Kontrollo nese 'quantity' ekziston ne $_POST dhe nese po, merr vleren
+        // Kontrollo nese quantity ekziston ne $_POST dhe nese po, merr vleren
         $quantity = isset($_POST["quantity"]) ? $_POST["quantity"] : 1;
 
         // Kontrollo nese produkti ekziston tashme ne kart
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ];
         }
     } elseif (isset($_POST["update_cart_item"])) {
-        // Azhurno sasinë e produktit në kartë
+        // menaxho sasinë e produktit ne kart
         $update_product_id = $_POST["update_quantity"];
         $new_quantity = isset($_POST["new_quantity_" . $update_product_id]) ? $_POST["new_quantity_" . $update_product_id] : 1;
 
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<tr>";
                 echo "<td>{$product->getProductId()}</td>";
                 echo "<td>{$product->getEmri()}</td>";
-                echo "<td>{$product->getCmimi()}</td>";
+                echo "<td>$" . number_format($product->getCmimi(), 2, '.', ',') . "</td>";
                 echo "<td>";
                 echo "<form action='shtoNeShporte.php' method='POST'>";
                 echo "<input type='hidden' name='update_quantity' value='{$product->getProductId()}'>";
@@ -94,15 +94,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </table>
 
-    <p>Totali i kartës: $<?php echo calculateTotalPrice(); ?></p>
+    <p>Totali i kartës: $<?php echo number_format(calculateTotalPrice(), 2, '.', ','); ?></p>
 
     <form action="pagesa.php" method="POST">
         <button type="submit">Vazhdo tek Pagesa</button>
     </form>
+    <button onclick="goBack()" class="btn">Vazhdo Blerjen</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
     <?php
 function calculateTotalPrice() {
     $totalPrice = 0;
-    // Llogarit totalin e çmimit të kartës duke përdorur sesionin
+    // Llogarit totalin e qmimit te kartes duke perdor sesionin
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $cart_item) {
             $product = $cart_item['product'];
@@ -179,6 +186,17 @@ function getProductInfoById($product_id) {
         button[type="submit"]:hover {
             background-color: #0077a3;
         }
+
+        .btn{
+            padding: 6px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left:5px;
+            text-decoration: none;
+ 
+        } 
        
         p {
             font-size: 18px;

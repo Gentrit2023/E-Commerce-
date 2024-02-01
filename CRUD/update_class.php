@@ -55,10 +55,10 @@ class UProdukti {
 
 
     public function updateProduct($update_id) {
-        // Krijo një varg për të mbajtur ndryshimet në të dhënat e produktit
+        // Krijo nje varg per ta mbajtur ndryshimet ne te dhenat e produktit
         $ndryshimet = array();
     
-        // Kontrollo ndryshimet në të dhënat e produktit dhe shto ato në vargun e ndryshimeve
+        // Kontrollo ndryshimet ne te dhenat e produktit dhe shto ato ne vargun e ndryshimeve
         if ($this->emri != '') {
             $ndryshimet[] = "Emri = '$this->emri'";
         }
@@ -78,16 +78,16 @@ class UProdukti {
             $ndryshimet[] = "sasia = '$this->sasia'";
         }
     
-        // Krijo query-në për të përditësuar të dhënat e produktit duke përfshirë ndryshimet e zbuluara
+        // Krijo query per te perditsuar te dhenat e produktit duke perfshi ndryshimet
         $update_product_query = "UPDATE products SET ";
-        $update_product_query .= implode(', ', $ndryshimet); // Së bashku me të gjitha ndryshimet të shtuara
-        $update_product_query .= ", data = NOW()"; // Shto kohën e ndryshimit
-        $update_product_query .= " WHERE product_id = $update_id"; // Për produktin me ID të dhënë
+        $update_product_query .= implode(', ', $ndryshimet); // Se bashku me te gjitha ndryshimet qe jon shtu
+        $update_product_query .= ", data = NOW()"; // Shto kohen e ndryshimit
+        $update_product_query .= " WHERE product_id = $update_id"; // Per produktin me ID e dhane
     
-        // Ekzekuto query-në për të përditësuar të dhënat e produktit
+        // Ekzekuto query per mi perditsue te dhanat e produktit
         $result_query = mysqli_query($this->connect, $update_product_query);
     
-        // Kontrollo nëse përditësimi është kryer me sukses
+        // Kontrollo nose perditësimi osht kry me sukses
         if ($result_query) {
             echo "<script>alert('Produkti me ID $update_id u perditsua me sukses')</script>";
           
