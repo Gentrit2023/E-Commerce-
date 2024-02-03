@@ -53,7 +53,7 @@ include('../includes/connect.php');
             if (searchInput.value === '') {
                 removeSearchParam();
 
-                window.location.href = 'logs.php';
+                window.location.href = 'crudUseri.php';
             }
         }
     });
