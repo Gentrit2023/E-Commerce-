@@ -15,13 +15,16 @@ class Kontakti {
 
             $sql = "INSERT INTO kontakti (emri, email, messages) VALUES ('$emri', '$email', '$messages')";
 
-           
-        }
-    }
 
-   
-    public function mbyllLidhjen() {
-        $this->connect->close();
+            if ($this->connect->query($sql) === TRUE) {
+                $_SESSION['message'] = "Te dhenat jane shtuar me sukses.";
+            } else {
+                $_SESSION['message'] = "Gabim gjate shtimit te te dhenave: " . $this->connect->error;
+            }
+
+
+            $this->mbyllLidhjen();
+        }
     }
 }
 ?>

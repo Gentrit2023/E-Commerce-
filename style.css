@@ -279,3 +279,27 @@ hr {
   border-radius: 50px;
   padding: 14px 70px;
 }
+
+
+
+@media screen and (max-width: 768px) {
+  .contenti {
+    top: 25%; 
+  }
+
+  .contenti a {
+    font-size: 18px;
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contenti {
+    top: 10%; 
+  }
+
+  .contenti a {
+    font-size: 14px;
+    padding: 8px 40px;
+  }
+}
