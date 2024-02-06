@@ -133,23 +133,6 @@ if (isset($_POST['insert_product'])) {
 
 
 
-<script>
-    window.onload = function() {
-        if (window.history && window.history.pushState) {
-           
-            window.history.pushState('forward', null, './#forward');
-            
-            window.onpopstate = function(event) {
-               
-                if (event.state && event.state === 'forward') {
-                    
-                    window.location.href = 'admin_panel/index_admin.php'; 
-                }
-            };
-        }
-    };
-</script>
 
-</script>
 </body>
 </html>

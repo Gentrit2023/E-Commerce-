@@ -44,7 +44,7 @@ class Produkti {
         if ($result_query) {
             $last_inserted_id = mysqli_insert_id($this->connect);
             echo "<script>alert('Produkti me ID $last_inserted_id u insertua me sukses')</script>";
-            header("Location: index_admin.php"); 
+            header("Location:index_admin.php"); 
             exit(); 
         } else {
             echo "<script>alert('Ka ndodhur nje gabim gjat insertimit se produktit')</script>";
